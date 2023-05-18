@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+
+    <style>
+        #bloco{
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+        #bl{
+            width: 200px;
+            height: 200px;
+            background-color:#F0D102;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="bloco"></div>
+  
+    
+    <p id="texto"></p>
+  
+    <script>
+        /*O on permite trabalhar com vários eventos.*/
+        $('#bloco').on({
+           click:() =>{$('#texto').text('Clicou  o quadrado.')},
+           mouseenter:()=>{$('#texto').text('Entrou no quadrado.')},
+           mouseleave:()=>{$('#texto').css('color', '#0237E6')},
+           
+        })
+           
+  
+    </script>
+</body>
+</html>
