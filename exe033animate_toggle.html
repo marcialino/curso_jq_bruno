@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        #caixa{
+            border: 3px solid black;
+            background-color: coral;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            margin-left: 0px;
+            margin-top: 50px;
+            font: normal 12pt verdana;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Alterar tamanho de um elemento, usando Animate e Toggle</h1>
+
+    <div id="caixa">
+        <p><label>CFB Cursos</label></p>
+        <p><label>Curso de jQuery</label></p>
+    </div>
+
+    <button id="btn_aumentar">Aumentar</button>
+    <button id="btn_diminuir">Diminuir</button>
+    <button id="btn_esquerda">Esquerda</button>
+    <button id="btn_direita">Direita</button>
+
+    <script>
+        $('#btn_aumentar').click(()=>{
+            $('#caixa').animate({width: '500px', height: '500px'}, {duration:'200'})
+        })
+
+        $('#btn_diminuir').click(()=>{
+            $('#caixa').animate({width:'200px', height: '200px'}, {duration:'2000'})
+        })
+        $('#btn_esquerda').click(()=>{
+          $('#caixa').animate({left: '500px'}, {duration:'200'})
+        })
+        $('#btn_direita').click(()=>{
+            $('#caixa').animate({left:'500px'}, {duration:'200', complete: ()=>{alert('movimentação terminou')}})
+        })
+      
+    </script>
+</body>
+</html>
