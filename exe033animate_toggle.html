@@ -18,8 +18,14 @@
             height: 200px;
             margin-left: 0px;
             margin-top: 50px;
-            font: normal 12pt verdana;
+            font: bold 14pt verdana;
+            color: black;
+            padding: 10px;
+            left: 20px;
+            text-align: center;
+            box-sizing: border-box;
         }
+       
     </style>
 
 </head>
@@ -31,25 +37,22 @@
         <p><label>Curso de jQuery</label></p>
     </div>
 
-    <button id="btn_aumentar">Aumentar</button>
-    <button id="btn_diminuir">Diminuir</button>
-    <button id="btn_esquerda">Esquerda</button>
-    <button id="btn_direita">Direita</button>
+    <button id="btn_tamanho">Diminuir/Aumentar</button>
+    <button id="btn_mostrar">Ocultar/Mostrar</button>
+    
 
     <script>
-        $('#btn_aumentar').click(()=>{
-            $('#caixa').animate({width: '500px', height: '500px'}, {duration:'200'})
+
+        /*Toggle: quando você coloca a width: toggle, ao clicar no botão, a caixa assume o tamanho mínimo. Clicando novamente, ela volta ao tamanho original. 
+        No opacity: quando clicar, a caixa é ocultada, clicando novamente, ela volta ao original. */
+        $('#btn_tamanho').click(()=>{
+            $('#caixa').animate({width: 'toggle', height: 'toggle'}, {duration:'2000'})
         })
 
-        $('#btn_diminuir').click(()=>{
-            $('#caixa').animate({width:'200px', height: '200px'}, {duration:'2000'})
+        $('#btn_mostrar').click(()=>{
+          $('#caixa').animate({opacity: 'toggle'}, {duration:'2000'})
         })
-        $('#btn_esquerda').click(()=>{
-          $('#caixa').animate({left: '500px'}, {duration:'200'})
-        })
-        $('#btn_direita').click(()=>{
-            $('#caixa').animate({left:'500px'}, {duration:'200', complete: ()=>{alert('movimentação terminou')}})
-        })
+     
       
     </script>
 </body>
