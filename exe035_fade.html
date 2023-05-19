@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        #caixa{
+            background-color: darkcyan;
+            border: 3px solid black;
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            position: absolute;
+            top: 120px;
+            left: 20px;
+            color: antiquewhite;
+            font: bold 14pt Verdana;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Fade In e Fade Out</h1>
+
+    <div id="caixa">
+        <h3>CFB Cursos</h3>
+        <p>Curso jQuery</p>
+    </div>
+
+    <button id="btn_mostrar">Mostrar</button>
+    <button id="btn_ocultar">Ocultar</button>
+    <button id="btn_ocultarmostrar">Ocultar/Mostrar</button>
+
+    <script>
+
+        /*FadeIn = mostrar. FadeOut+ ocultar
+        Você pode colocar o tempo no Fade, para regular como ele vai mostrar e fechar. No exemplo coloquei um com tempo e outro sem. Substitui o delay*/
+        $('#btn_mostrar').click(()=>{
+            $('#caixa').fadeIn(3000)
+
+        })
+        $('#btn_ocultar').click(()=>{
+            $('#caixa').fadeOut()
+        })
+
+        $('#btn_ocultarmostrar').click(()=>{
+            $('#caixa').fadeOut().delay(1000).fadeIn()
+        })
+    </script>
+</body>
+</html>
