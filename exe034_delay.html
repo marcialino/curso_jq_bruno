@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    
+<style>
+    #caixa{
+        border: 3px solid black;
+        background-color: coral;
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        margin-left: 0px;
+        margin-top: 50px;
+        font: bold 14pt verdana;
+        color: black;
+        padding: 10px;
+        left: 20px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+   
+</style>
+
+</head>
+<body>
+    <h1>Função Delay</h1>
+    <h2>Gera um tempo de espera antes de executar determinada função!</h2>
+
+
+</head>
+<body>
+    
+    <div id="caixa">
+        <p><label>CFB Cursos</label></p>
+        <p><label>Curso de jQuery</label></p>
+    </div>
+
+    <button id="btn_aumentar">Aumentar</button>
+    <button id="btn_diminuir">Diminuir</button>
+    <button id="btn_mostrar">Ocultar/Mostrar</button>
+    
+
+    <script>
+
+        /*Delay: com este comando a operação de aumentar e diminuir a caixa, vai dar um tempo antes de se realizar. Esse tempo o programador é que decide. Neste exerício foi de 2seg*/
+        $('#btn_aumentar').click(()=>{
+            $('#caixa').delay(2000).animate({width: '500px'}).delay(2000).animate({height:'500px'})
+        })
+        $('#btn_diminuir').click(()=>{
+            $('#caixa').delay(2000).animate({width:'200px'}).delay(2000).animate({height: '200px'})
+        })
+
+        $('#btn_mostrar').click(()=>{
+          $('#caixa').animate({opacity: 'toggle'}, {duration:'2000'})
+        })
+     
+      
+    </script>
+</body>
+</html>
