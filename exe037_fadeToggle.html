@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+<style>
+    #menu{
+        background-color: rgba(169, 169, 169, 0.304);
+        height: 200px;
+        
+    }
+    .itemMenu{
+        font:bold 14pt verdana;
+        display: inline-block;
+        padding: 20px;
+        background-color: blue;
+        border-radius: 10px;
+        color: white;
+        margin-left: 20px;
+        margin-top: 20px;
+        cursor: pointer;
+        text-transform: capitalize;
+        
+    }
+    h1{
+        text-align: center;
+    }
+    .submenu{
+        display: none;
+        border: 1px solid black;
+        width: 100%;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .itemSubmenu{
+        display: flex;
+        font: normal 11pt Verdana;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 20px;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 12px;
+        background-color: #128;
+        color: white;
+        text-transform: capitalize;
+        cursor: pointer;
+        box-sizing:border-box ;
+
+
+    }
+</style> 
+
+</head>
+<body>
+    <h1>Função fadeToggle</h1>
+
+    <div id="menu">
+        <nav>
+        <ul>
+            <li class="itemMenu">Home</li>
+                 
+            <li class="itemMenu" id="menujquery">jQuery
+            <ul class="submenu" id="submenu_jquery">
+                <li class="itemSubmenu">Aulas jQuery</li>
+                <li class="itemSubmenu">Material jQuery</li>
+            </ul>
+           </li>
+           
+            <li class="itemMenu">Canva
+                <ul class="submenu" id="submenu_canva">
+                    <li class="itemSubmenu">Aulas Canva</li>
+                    <li class="itemSubmenu">Material Canvas</li>
+                </ul>
+            </li>
+            <li class="itemMenu">Python
+                <ul class="submenu" id="submenu_python">
+                    <li class="itemSubmenu">Aulas Python</li>
+                    <li class="itemSubmenu">Material Python</li>
+                </ul>
+            </li>
+            <li class="itemMenu">Arduíno
+                <ul class="submenu" id="submenu_arduino">
+                    <li class="itemSubmenu">Aulas Arduino</li>
+                    <li class="itemSubmenu">Material Arduino</li>
+                </ul>
+                
+            </li>
+        </ul>
+        </nav>
+    </div>
+
+    <script>
+        $('.itemMenu').mouseover(
+            function(){
+                $(this).fadeTo(100, 0.2)
+            }
+        )
+        $('.itemMenu').mouseleave(
+            function(){
+                $(this).fadeTo(100,1)
+            }
+        )
+        $('#menujquery').click(function(){
+                $('#submenu_jquery').fadeToggle()
+            })
+        
+          
+        
+    </script>
+</body>
+</html>
