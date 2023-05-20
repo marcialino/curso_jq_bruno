@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+
+     
+    .menu{
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+
+
+    }
+    #menus{
+        display: flex;
+        background-color: #acc8d6;
+        width: 100%;
+        margin-left: -10px;
+        
+    }
+    .btnMenu{
+        display: inline-block;
+        padding: 5px;
+        margin: 10px;
+        font: bold 10pt Verdana;
+        color: black;
+        background-color: #e5e5e5;
+        border-radius: 10px;
+        width: 80px;
+        text-align: center;
+        
+    }
+    #controle{
+        display: inline-flex;
+        width: 200px;
+        align-items: center;
+        justify-content: center;
+        background-color: #acc8d6;
+        padding: 10px;
+        border-radius: 0 0 10px 10px ;
+        margin-left: 10px;
+        margin-right: auto;
+        margin-top: -15.5px;
+        
+    }
+   
+    #btnCima{
+        font: bold 10pt verdana;
+        padding: 5px;
+        border-radius: 8px;
+        margin: 5px;
+    }
+    #btnBaixo{
+        font: bold 10pt Verdana;
+        padding: 5px;
+        border-radius: 8px;
+        margin: 5px;
+    }
+    </style>
+
+</head>
+<body>
+    <h1>Funções: SlideUP e SlideDOWN</h1>
+    <h3>Efeito deslizante, para cima e para baixo!</h3>
+
+    <div id="menu" class="menu">
+        <nav>
+            <ul id="menus">
+                <li class="btnMenu">Home</li>
+                <li class="btnMenu">Cursos</li>
+                <li class="btnMenu">Material</li>
+                <li class="btnMenu">Contatos</li>
+                <li class="btnMenu">Sobre</li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="controle">
+        <button id="btnCima">Ocultar</button>
+        <button id="btnBaixo">Mostrar</button>
+        <p id="msg"></p>
+    </div>
+
+    <script>
+        const cx=$('#menu')
+        $('#btnCima').click(function(){
+            $('#menus').slideUp(2000)
+        })
+        $('#btnBaixo').click(function(){
+            $('#menus').slideDown(2000)
+        })
+    </script>
+</body>
+</html>
