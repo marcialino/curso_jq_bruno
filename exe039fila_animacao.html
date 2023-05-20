@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        #caixa{
+            width: 100px;
+            height: 100px;
+            background-color: coral;
+        }
+        #txt{
+            font: normal 12pt Verdana;
+        }
+
+        #info{
+            font: Bold 14pt Verdana;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Fila de Animações</h1>
+    <h3>Obtendo informações!</h3>
+    <p><button id="btn_aumentar">Aumentar</button>
+    <button id="btn_diminuir">Diminuir</button></p>
+    <p><button id="btn_finalizar">Finalizar</button></p>
+    
+    <p id="txt">Número de eventos:</p>
+    <p id="info"></p>
+    
+    <div id="caixa"></div>
+  
+
+    <script>
+
+        const cx = $('#caixa')
+        $('#btn_aumentar').click(()=>{
+            $('#caixa').animate({'width':'800px', 'height': '800px'},{duration:5000,complete:()=>{$('#info').text(cx.queue().length)}})
+
+            $('#info').text(cx.queue().length)
+        })
+
+        $('#btn_diminuir').click(()=>{
+            $('#caixa').animate({'width': '100px', 'height': '100px'},{duration:5000, complete:()=>{$('#info').text(cx.queue().length)}})
+            $('#info').text(cx.queue(). length)
+        })
+
+        $('#btn_finalizar').click(()=>{
+            $('#caixa').finish()
+        })
+    </script>
+
+
+</body>
+</html>
