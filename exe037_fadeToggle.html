@@ -9,14 +9,27 @@
     </script>
 
 <style>
+    *{
+        padding: 0px;
+        margin: 0px;
+        border: none;
+    }
     #menu{
         background-color: rgba(169, 169, 169, 0.304);
         height: 200px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
         
     }
     .itemMenu{
         font:bold 14pt verdana;
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        margin: 10px;
         padding: 20px;
         background-color: blue;
         border-radius: 10px;
@@ -37,6 +50,7 @@
         height: 30px;
         justify-content: center;
         align-items: center;
+        color: black;
     }
 
     .itemSubmenu{
@@ -63,40 +77,51 @@
 <body>
     <h1>Função fadeToggle</h1>
 
-    <div id="menu">
+    <div id="menu" class="menu">
         <nav>
         <ul>
             <li class="itemMenu">Home</li>
                  
-            <li class="itemMenu" id="menujquery">jQuery
-            <ul class="submenu" id="submenu_jquery">
-                <li class="itemSubmenu">Aulas jQuery</li>
-                <li class="itemSubmenu">Material jQuery</li>
-            </ul>
-           </li>
-           
-            <li class="itemMenu">Canva
-                <ul class="submenu" id="submenu_canva">
-                    <li class="itemSubmenu">Aulas Canva</li>
-                    <li class="itemSubmenu">Material Canvas</li>
-                </ul>
+            <li class="itemMenu" id="menujquery">jQuery</li>
+                      
+            <li class="itemMenu" id="menucanvas">Canvas
             </li>
-            <li class="itemMenu">Python
-                <ul class="submenu" id="submenu_python">
-                    <li class="itemSubmenu">Aulas Python</li>
-                    <li class="itemSubmenu">Material Python</li>
-                </ul>
+
+            <li class="itemMenu" id="menupython">Python
             </li>
-            <li class="itemMenu">Arduíno
-                <ul class="submenu" id="submenu_arduino">
-                    <li class="itemSubmenu">Aulas Arduino</li>
-                    <li class="itemSubmenu">Material Arduino</li>
-                </ul>
-                
-            </li>
+
+            <li class="itemMenu" id="menuarduino">Arduíno</li>
         </ul>
         </nav>
     </div>
+
+    <div class="submenu" id="submenu_jquery">
+        <ul>
+            <li class="itemSubmenu">Aulas jQuery</li>
+            <li class="itemSubmenu">Material jQuery</li>
+        </ul>
+    </div>
+
+    <div class="submenu" id="submenu_canvas">
+        <ul>
+            <li class="itemSubmenu">Aulas Canva</li>
+            <li class="itemSubmenu">Material Canvas</li>
+        </ul>
+    </div>
+
+    <div class="submenu" id="submenu_python">
+        <ul>
+            <li class="itemSubmenu">Aulas Python</li>
+            <li class="itemSubmenu">Material Python</li>
+        </ul>
+    </div>
+    <div class="submenu" id="submenu_arduino">
+        <ul>
+            <li class="itemSubmenu">Aulas Arduino</li>
+            <li class="itemSubmenu">Material Arduino</li>
+        </ul>
+    </div>
+
 
     <script>
         $('.itemMenu').mouseover(
@@ -113,8 +138,19 @@
                 $('#submenu_jquery').fadeToggle()
             })
         
-          
-        
+        $('#menucanvas').click(function(){
+                $('#submenu_canvas').fadeToggle()
+            })
+
+        $('#menupython').click(function(){
+                $('#submenu_python').fadeToggle()
+            })  
+            
+        $('#menuarduino').click(function(){
+                $('#submenu_arduino').fadeToggle()
+            })  
+            
+
     </script>
 </body>
 </html>
