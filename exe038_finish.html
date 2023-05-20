@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        #caixa{
+            background-color: crimson;
+            width: 100px;
+            height: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Função Finish</h1>
+
+    <p>
+        <button id="btn_aumentar">Aumentar</button>
+        <button id="btn_diminuir">Diminuir</button>
+    </p>
+    <p><button id="btn_finalizar">Finalizar</button></p>
+    
+    <div id="caixa"></div>
+
+    <script>
+
+        /*A função Finish, interrompe o processo de aumentar ou diminuir, como neste exemplo, e vai logo para o final do processo. Ou seja, ele aumenta o elemento de uma única vez.*/
+        $('#btn_aumentar').click(()=>{
+            $('#caixa').animate({'width': '800px', 'height': '800px'},10000)
+        })
+        $('#btn_diminuir').click(()=>{
+            $('#caixa').animate({'width': '100px', 'height':'100px'},10000)
+        })
+        $('#btn_finalizar').click(()=>{
+            $('#caixa').finish()
+        })
+    </script>
+</body>
+</html>
