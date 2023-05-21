@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        .item_menu{
+            font: bold 10pt Verdana;
+            color: black;
+            display: inline-block;
+            padding: 15px;
+            margin: 15px;
+            border-radius: 10px;
+            background-color:#d17878;
+        }
+
+        #menu{
+            background-color: #dfcccc;
+            margin: 0px;
+        }
+        #btn{
+            background-color:#dfcccc;
+            padding: 20px;
+            width: 180px;
+            border-radius: 0px 0px 15px 15px ;
+            margin-top: -15px;
+        }
+        #btn_ocultar{
+            font: bold 10pt Verdana;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #btn_mostrar{
+            font: bold 10pt Verdana;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <h1>Funções Slide e Toggle</h1>
+
+    <div id="menu">
+    <nav>
+        <ul id="menus">
+            <li class="item_menu">Home</li>
+            <li class="item_menu">Cursos</li>
+            <li class="item_menu">Material</li>
+            <li class="item_menu">Contatos</li>
+            <li class="item_menu">Sobre</li>
+        </ul>
+    </nav>
+</div>
+
+<div id="btn">
+    <button id="btn_ocultar">Ocultar</button> <button id="btn_mostrar">Mostrar</button>
+</div>
+
+<script>
+    $('#btn_ocultar').click(()=>{
+        $('#menus').slideUp(2000)
+    })
+    $('#btn_mostrar').click(()=>{
+        $('#menus').slideDown(2000)
+    })
+</script>
+</body>
+</html>
