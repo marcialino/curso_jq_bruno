@@ -31,18 +31,16 @@
             border-radius: 0px 0px 15px 15px ;
             margin-top: -15px;
         }
-        #btn_ocultar{
+        #btn_menu{
             font: bold 10pt Verdana;
-            padding: 10px;
+            padding: 12px;
             border-radius: 10px;
             cursor: pointer;
+            margin-left: 50px;
         }
-
-        #btn_mostrar{
-            font: bold 10pt Verdana;
-            padding: 10px;
-            border-radius: 10px;
-            cursor: pointer;
+        #msg{
+            font: normal 10pt Verdana;
+            text-align: center;
         }
     </style>
 
@@ -65,16 +63,24 @@
 </div>
 
 <div id="btn">
-    <button id="btn_ocultar">Ocultar</button> <button id="btn_mostrar">Mostrar</button>
+    <button id="btn_menu">Menu</button> 
+    <p id="msg"></p>
 </div>
 
 <script>
-    $('#btn_ocultar').click(()=>{
-        $('#menus').slideUp(2000)
+    $('#btn_menu').click(function(){
+        $('#menus').slideToggle(2000, ()=>{
+            if($('#menus').is(':visible')){
+            $('#msg').text('Menu exibido')
+            $('#btn').css('background','#31827c')
+        }else{
+            $('#msg').text('Menu oculto')
+            $('#btn').css('background','#dfcccc')
+        }
+        })
+       
     })
-    $('#btn_mostrar').click(()=>{
-        $('#menus').slideDown(2000)
-    })
+    
 </script>
 </body>
 </html>
