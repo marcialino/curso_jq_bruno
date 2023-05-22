@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+</head>
+
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+</script>
+
+<style>
+    
+    #caixa{
+        background-color: #f7114b;
+        width: 200px;
+        height: 200px;
+        position: absolute; 
+
+    }
+    .btn{
+        font: bold 10pt Verdana;
+        padding: 15px;
+        border-radius: 10px;
+    }
+</style>
+<!--No elemento caixa, deve-se colocar position: absolute, por-->
+<body>
+    <h1>Função Stop</h1>
+    <p>
+        <button id="btn_animar" class="btn">Animar</button>
+        <button id="btn_próxima" class="btn">Próxima</button>
+        <button id="btn_parar" class="btn">Parar</button>
+        <button id="btn_fim" class="btn">Fim</button>
+    </p>
+    <div id="caixa"></div>
+</body>
+</html>
