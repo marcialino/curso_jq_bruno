@@ -11,7 +11,7 @@
 </script>
 
 <style>
-    
+    /*para mover a caixa no animate left, a position precisa ser absolute*/
     #caixa{
         background-color: #f7114b;
         width: 200px;
@@ -30,10 +30,30 @@
     <h1>Função Stop</h1>
     <p>
         <button id="btn_animar" class="btn">Animar</button>
-        <button id="btn_próxima" class="btn">Próxima</button>
+        <button id="btn_proxima" class="btn">Próxima</button>
         <button id="btn_parar" class="btn">Parar</button>
         <button id="btn_fim" class="btn">Fim</button>
     </p>
     <div id="caixa"></div>
+
+    <script>
+        $('#btn_animar').click(()=>{
+            $('#caixa').animate({left:800}, {duration:2000})
+            $('#caixa').animate({top:400},{duration: 2000})
+            $('#caixa').animate({left:00}, {duration:2000})
+            $('#caixa').animate({top:150}, {duration:2000})
+        })
+        $('#btn_proxima').click(()=>{
+            $('#caixa').stop()
+        })
+
+        $('#btn_parar').click(()=>{
+            $('#caixa').stop(true, false) /*a função estop tem dois parâmetros: limpa fila(clear queuen) parar fila(jump Toend(pular para o final. Você pode acionar esses parâmetros usando true, caso não queira, use false*/
+        })
+
+        $('#btn_fim').click(()=>{
+            $('#caixa').stop(false, true)
+        })
+    </script>
 </body>
 </html>
