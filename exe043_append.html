@@ -54,9 +54,22 @@
             $('#caixa').append("<div class= 'sub_caixa'></div>")
         })*/
        $('#btn_adicionar').click(()=>{
-            r = Math.floor(Math)
-            $('#caixa').append()
-       })
+            r = Math.floor(Math.random()*255)
+            g = Math.floor(Math.random()*255)
+            b = Math.floor(Math.random()*255)
+            $('#caixa').append("<div class='sub_caixa' style='background-color: rgb("+r+","+g+","+b+")'></div>")
+        })
+/*Usando o AppendTo: primeiro você indica o que quer adicionar, e depois mostra onde adicionar. Veja abaixo:*/
+        $('#btn_adicionar5').click(()=>{
+
+            for(let i=0; i<5; i++){
+            r = Math.floor(Math.random()*255)
+            g = Math.floor(Math.random()*255)
+            b = Math.floor(Math.random()*255)
+            $("<div class='sub_caixa' style='background-color: rgb("+r+","+g+","+b+")'></div>").appendTo('#caixa')
+            }
+         
+        })
        
       
     </script>
