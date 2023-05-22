@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+</script>
+
+<style>
+    #caixa{
+        background-color: darkgray;
+        width: 100%;
+        border: 3px solid #000;
+        border-radius: 10px;
+        padding: 10px 0px 0px 0px ;
+        display: flex;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        
+    }
+    .btn{
+        font: bold 10pt verdana;
+        padding: 10px;
+        margin-bottom: 15px;
+        margin-left: 5px;
+        border-radius: 10px;
+    }
+    .sub_caixa{
+        border: 1px solid #000;
+        width: 100px;
+        height: 100px;
+        margin: 0px 0px 10px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: xx-large;
+    }
+</style>
+
+</head>
+<body>
+    <h1>Funções Prepend e PrependT0</h1>
+
+<div>
+    <button id="btn_adicionar" class="btn">Adicionar</button>
+    <button id="btn_adicionar5" class="btn">Adicionar 5x</button>
+</div>
+
+<div id="caixa"></div>
+
+
+<script>
+   /* O código abaixo você adiciona a sub_caixa. Ela não foi criada no HTML, apenas no CSS. Você pode também adicionar cada sub-caixa com cores diferentes. Veja no próximo código:
+    $('#btn_adicionar').click(()=>{
+        $('#caixa').append("<div class= 'sub_caixa'></div>")
+    })*/
+
+    let r,g,b
+    let num = 0
+
+   $('#btn_adicionar').click(()=>{
+        r = Math.floor(Math.random()*255)
+        g = Math.floor(Math.random()*255)
+        b = Math.floor(Math.random()*255)
+        $('#caixa').append("<div class='sub_caixa' style='background-color: rgb("+r+","+g+","+b+")'>"+num+"</div>")
+        num++
+    })
+/*Usando o AppendTo: primeiro você indica o que quer adicionar, e depois mostra onde adicionar. Veja abaixo:*/
+    $('#btn_adicionar5').click(()=>{
+
+        for(let i=0; i<5; i++){
+        r = Math.floor(Math.random()*255)
+        g = Math.floor(Math.random()*255)
+        b = Math.floor(Math.random()*255)
+        $("<div class='sub_caixa' style='background-color: rgb("+r+","+g+","+b+")'>"+num+"</div>").appendTo('#caixa')
+        num++
+        }
+     
+    })
+   
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+>
