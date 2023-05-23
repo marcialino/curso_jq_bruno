@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+        </script>
+    
+        <style>
+            #caixa, #caixa2{
+                width: 100%;
+                background-color: cornflowerblue;
+                padding:10px 0px 0px 0px ;
+                border: 3px solid black;
+                display: flex;
+                flex-wrap: wrap;
+                box-sizing: border-box;
+                margin-bottom: 15px;
+            }
+ 
+
+            .sub_caixa{
+                width: 100px;
+                height: 100px;
+                background-color: azure;
+                display: flex;
+                border: 3px solid black;
+                margin: 10px 0px 10px 10px;
+                justify-content: center;
+                align-items: center;
+                font-size: xx-large;
+            }
+
+        </style>
+
+</head>
+<body>
+    <h1>Funções After e Before</h1>
+
+    <p>
+        <button id="btn_adicionarantes">Adicionar Antes</button>
+        <button id="btn_adicionardepois">Adicionar Depois</button>
+        <button id="btn_antes">Adicionar texto antes</button>
+        <button id="btn_depois">Adicionar texto depois</button>
+    </p>
+
+    <div id="caixa">
+        
+    </div>
+
+
+    <div id="caixa2" class="caixa2">CFB Cursos</div>
+
+    <script>
+        /*Before: adiciona elemento antes de uma tag. Por exemplo, antes de uma div, p. O after adiciona depois da tag.*/
+
+        let r,g,b
+        let num = 1
+        $('#btn_adicionarantes').click(()=>{
+            r=Math.floor(Math.random()*255)
+            g=Math.floor(Math.random()*255)
+            b=Math.floor(Math.random()*255)
+
+            $('#caixa').before("<div class='sub_caixa' style='background-color:rgb("+r+", "+g+", "+b+")'>"+num+"</div>")
+            num++
+        })
+
+        $('#btn_adicionardepois').click(()=>{
+            for(let i=0; i<5; i++){
+            r=Math.floor(Math.random()*255)
+            g=Math.floor(Math.random()*255)
+            b=Math.floor(Math.random()*255)
+
+            $('#caixa').after("<div class='sub_caixa' style='background-color:rgb("+r+", "+g+", "+b+")'>"+num+"</div>")
+            num++
+            }
+          
+        })
+
+        $('#btn_antes').click(()=>{
+           
+            $('#caixa2').before('Curso de jQuery ANTES / ')
+
+        })
+
+
+        $('#btn_depois').click(()=>{
+           
+            $('#caixa2').after(' / Curso de jQuery DEPOIS')
+            
+        })
+
+
+
+    </script>
+</body>
+</html>
