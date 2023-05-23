@@ -60,12 +60,13 @@
 
     let r,g,b
     let num = 0
+    /*Com a função append, o elemento é adicionado do início para o final. Com o prepend é o contrário, o elemento é adicionado do final para o início, ou seja, sempre à esquerda do elemento que já havia sido adicionado.*/
 
    $('#btn_adicionar').click(()=>{
         r = Math.floor(Math.random()*255)
         g = Math.floor(Math.random()*255)
         b = Math.floor(Math.random()*255)
-        $('#caixa').append("<div class='sub_caixa' style='background-color: rgb("+r+","+g+","+b+")'>"+num+"</div>")
+        $('#caixa').prepend("<div class='sub_caixa' style='background-color: rgb("+r+","+g+","+b+")'>"+num+"</div>")
         num++
     })
 /*Usando o AppendTo: primeiro você indica o que quer adicionar, e depois mostra onde adicionar. Veja abaixo:*/
@@ -75,7 +76,7 @@
         r = Math.floor(Math.random()*255)
         g = Math.floor(Math.random()*255)
         b = Math.floor(Math.random()*255)
-        $("<div class='sub_caixa' style='background-color: rgb("+r+","+g+","+b+")'>"+num+"</div>").appendTo('#caixa')
+        $("<div class='sub_caixa' style='background-color: rgb("+r+","+g+","+b+")'>"+num+"</div>").prependTo('#caixa')
         num++
         }
      
@@ -91,4 +92,3 @@
 
 
 
->
