@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+<style>
+    #caixa, #caixa2{
+        width: 100%;
+        background-color: cornflowerblue;
+        padding:10px 0px 0px 0px ;
+        border: 3px solid black;
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+    }
+
+
+    .sub_caixa{
+        width: 100px;
+        height: 100px;
+        background-color: azure;
+        display: flex;
+        border: 3px solid black;
+        margin: 10px 0px 10px 10px;
+        justify-content: center;
+        align-items: center;
+        font-size: xx-large;
+    }
+</style>
+</head>
+<body>
+    <h1>Funções Remove e Empty</h1>
+
+    <p>
+        <button id="btn_adicionar">Adicionar</button>
+        <button id="btn_remover">Remover Elemento</button>
+        <button id="btn_removerconteudo">Remover Conteúdo</button>
+    </p>
+
+    <div id="caixa" class="caixa">
+        <div id="d0" class="sub_caixa">0</div>
+    </div>
+
+    <script>
+        let r,g,b
+        let num=1
+
+        $('#btn_adicionar').click(()=>{
+            r=Math.floor(Math.random()*255)
+            g=Math.floor(Math.random()*255)
+            b=Math.floor(Math.random()*255)
+
+        $('#caixa').append("<div id='d" +num+"  'class='sub_caixa style='background-color:rgb("+r+","+g+", "+b+")'>"+num+"</div>")
+        num++
+        })
+         /*Se você colocar o remove, apontando para #caixa. O remove, remove o elemento #caixa e tudo que está dentro dele.
+        $('#btn_remover').click(()=>{
+            $('#caixa').remove()
+        })*/
+         /*No caso abaixo ele removeu apenas a div com id zero. Pois, no append foi indicado para numerar as caixas adicionadas, começando por num=0*/
+        $('#btn_remover').click(()=>{
+            let div = $('#d0')
+            $(div).remove()
+        })
+      
+    </script>
+</body>
+</html>
