@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        .caixa{
+            width: 100%;
+            height: 120px;
+            background-color: cornflowerblue;
+            display: inline-flex;
+            box-sizing: border-box;
+            border: 3px solid black;
+            border-radius: 10px;
+            flex-wrap: wrap;
+            padding: 10px 0px 0px 10px;
+
+        }
+        #repositorio{
+            width: 100%;
+            background-color: #ff0841;
+            display: inline-flex;
+            box-sizing: border-box;
+            border: 3px solid black;
+            border-radius: 10px;
+            flex-wrap: wrap;
+            padding: 15px;
+            margin-top: 20px;
+
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Função Clone, para clonar elementos em jQuery</h1>
+
+    <p>
+        <button id="btn_clonar">Clonar</button>
+    </p>
+
+    <div id="caixa" class="caixa">
+        <h2>CFB Cursos - Curso jQuery</h2>
+    </div>
+    <div id="repositorio"></div>
+
+    <script>
+        $('#btn_clonar').click(()=>{
+            $('#caixa').clone().appendTo($('#repositorio'))
+        })
+
+        /*Clonou para dentro de div repositorio*/
+    </script>
+</body>
+</html>
