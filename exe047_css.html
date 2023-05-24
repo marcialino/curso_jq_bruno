@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        #caixa{
+            width: 100%;
+            background-color: darkgrey;
+            border: 3px solid black;
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+        }
+
+        .subcaixa{
+            width: 100px;
+            height: 100px;
+            margin: 10px 10px 10px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: xx-large;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Menipulando propriedades CSS</h1>
+
+    <p>
+        <button id="btn_verde">Verde</button>
+        <button id="btn_vermelho">Vermelho</button>
+        <button id="btn_azul">Azul</button>
+    </p>
+    <div id="caixa" class="caixa">
+        <div class="subcaixa" id="d0" style="background-color: rgb(255, 255, 255);">0</div>
+    </div>
+
+    <script>
+        $('#btn_verde').click(()=>{
+            $('#caixa').css({"background-color": '#0f0', 'color':'#f0f'})
+        
+        })
+
+        $('#btn_vermelho').click(()=>{
+            $('#caixa').css({'background-color': '#f00', 'color': '#91334f'})
+        })
+
+        $('#btn_azul').click(()=>{
+            $('#caixa').css({'background-color': '#1b8798', 'color':'#d11e48'})
+
+
+        })
+    </script>
+</body>
+</html>
