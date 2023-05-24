@@ -57,17 +57,25 @@
             g=Math.floor(Math.random()*255)
             b=Math.floor(Math.random()*255)
 
-        $('#caixa').append("<div id='d" +num+"  'class='sub_caixa style='background-color:rgb("+r+","+g+", "+b+")'>"+num+"</div>")
+        $('#caixa').append("<div id='d" +num+"'class='sub_caixa' style='background-color:rgb("+r+","+g+", "+b+")'>"+num+"</div>")
         num++
         })
+
+
+
          /*Se você colocar o remove, apontando para #caixa. O remove, remove o elemento #caixa e tudo que está dentro dele.
         $('#btn_remover').click(()=>{
             $('#caixa').remove()
         })*/
          /*No caso abaixo ele removeu apenas a div com id zero. Pois, no append foi indicado para numerar as caixas adicionadas, começando por num=0*/
+
         $('#btn_remover').click(()=>{
-            let div = $('#d0')
-            $(div).remove()
+            $('#d' +(num-1)).remove()
+            num--
+        })
+
+        $('#btn_removerconteudo').click(()=>{
+            $('#caixa').empty()
         })
       
     </script>
