@@ -11,19 +11,27 @@
 
     <style>
         .caixa{
-            width: 100%;
+            width: 100px;
+            height: 100px;
             border: 3px solid black;
             border-radius: 10px;
-            background-color: darkgrey;
+            background-color: white;
             display: flex;
             flex-wrap: wrap;
+            box-sizing: border-box;
             padding: 15px;
-            margin-bottom: 20px;
+            margin-right: 20px;
+            justify-content: center;
+            align-items: center;
             
 
         }
+        .caixas{
+            display: flex;
+            width: 100%;
+        }
 
-        .item{
+        /*.item{
             width: 80px;
             height: 80px;
             border: 3px solid black;
@@ -34,22 +42,24 @@
             font-size: xx-large;
             padding: 15px;
             margin: 10px;
+        }*/
+
+        .ocultar{
+            display: none
         }
-        .cor01{
-            background-color:#880000;
+
+        .btnFechar{
+            background-color: #800;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            
         }
-        .cor02{
-            background-color: #008800;
-        }
-        .cor03{
-            background-color: #000088;
-        }
-        .cor04{
-            background-color: #888800;
-        }
-        .cor05{
-            background-color: #008888;
-        }
+       
     </style>
 
 </head>
@@ -59,46 +69,46 @@
 
     <p>
         <button id="btn_reset">Reset</button>
-        <button id="btn_mudar">Mudar</button>
+    
+        <div id="caixas" class="caixas">
+            
+            <div id="caixa1" class="caixa" style="background-color: #f00;">
+            <button id="btnFechar1" class="btnFechar">X</button>
+            </div>
 
-    <div id="caixa1" class="caixa">
+            <div id="caixa2" class="caixa" style="background-color: #080;">
+                <button id="btnFechar2" class="btnFechar">X</button>
 
-        <div id="item1" class="item cor01">1</div>
-        <div id="item2" class="item cor02">2</div>
-        <div id="item3" class="item cor03">3</div>
-        <div id="item4" class="item cor04">4</div>
-        <div id="item5" class="item cor05">5</div>
-    </div>
+            </div>
 
-    <div id="caixa2" class="caixa"></div>
+            <div id="caixa3" class="caixa" style="background-color: #008;">
+            <button id="btnFechar3" class="btnFechar">X</button></div>
+
+            <div id="caixa4" class="caixa" style="background-color: #880;">
+            <button id="btnFechar4" class="btnFechar">X</button></div>
+           
+            <div id="caixa5" class="caixa" style="background-color: #088;">
+            <button id="btnFechar5" class="btnFechar">X</button></div>
+
+        </div>
+   
 
     <script>
-    let itens = $('.item')
-        let i = 0
-        console.log(itens)
-
-        $('#btn_mudar').click(()=>{
-            let item = $(itens[i]).detach()
-             i++
-        $('#caixa2').append(item)
+        $('.btnFechar').click((e)=>{
+            $('#'+e.target.id).parent().addClass('ocultar')
         })
 
-
-
-        $('#btn_reset').click(()=>{
-            for(let i=0; i<itens.length; i++){
-                let item=$(itens[i]).detach()
-                $('#caixa1').append(item)
+        $('#btn_reset').click((e)=>{
+            let itens=$('.caixa')
+            for(let i=0; i < itens.length; i++){
+                let item=$(itens[i])
+                if(item.hasClass('ocultar')){
+                    item.removeClass('ocultar')
+                }
             }
-            i=0
         })
-        
-       /* $('#btn_reset').click(()=>{for(let i=0; i< itens.length; i++){
-            let item = $(itens[i]).detach()
-           $('#caixa1').append(item) 
-        }
-        i=0
-        })*/
+
+
     </script>
 
     
