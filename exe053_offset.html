@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        #caixa{
+        background-color: red;
+        width: 80px; 
+        height: 80px;
+        border:3px solid black;
+        margin-left: 40px;
+        margin-top: 20px;
+        position: absolute;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Função Offset - Alterando o Top e Left do elemento! </h1>
+    <p><button id="btn_posicao">Posição</button></p>
+    <p>
+        <label>Topo:</label>
+        <input type="range" name="top" id="top" min="0" max="500">
+        <label>Left</label>
+        <input type="range" name="left" id="left" min="0" max="500">
+    </p>
+
+    <div id="caixa" class="caixa" ></div>
+
+    <script>
+        $('#btn_posicao').click(()=>{
+         let pt = $('#caixa').position().top
+         let pl = $('#caixa').position().left
+         let ot = $('#caixa').offset().top
+         let ol = $('#caixa').offset().left
+
+            alert(`Position: ${(pt).toFixed(2)} e a posição esquerda: ${(pl).toFixed(2)}. Offset: ${(ot).toFixed(2)} e ${(ol).toFixed(2)}`)
+
+        
+        })
+
+        $('#top').change((e)=>{
+            let valor=document.getElementById(e.target.id).value
+            $('#caixa').offset({'top': valor})
+        })
+
+        $('#left').change((e)=>{
+            let valor=document.getElementById(e.target.id).value
+            $('#caixa').offset({'left': valor})
+        })
+
+
+        
+      
+  
+    </script>
+</body>
+</html>
