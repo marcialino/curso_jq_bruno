@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        .caixa{
+            width: 100%;
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: darkgrey;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 15px;
+            margin-bottom: 20px;
+            
+
+        }
+
+        .item{
+            width: 80px;
+            height: 80px;
+            border: 3px solid black;
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            font-size: xx-large;
+            padding: 15px;
+            margin: 10px;
+        }
+        .cor01{
+            background-color:#880000;
+        }
+        .cor02{
+            background-color: #008800;
+        }
+        .cor03{
+            background-color: #000088;
+        }
+        .cor04{
+            background-color: #888800;
+        }
+        .cor05{
+            background-color: #008888;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Função hasClass - Como saber se um elemento usa determinada classe.</h1>
+
+    <p>
+        <button id="btn_reset">Reset</button>
+        <button id="btn_mudar">Mudar</button>
+
+    <div id="caixa1" class="caixa">
+
+        <div id="item1" class="item cor01">1</div>
+        <div id="item2" class="item cor02">2</div>
+        <div id="item3" class="item cor03">3</div>
+        <div id="item4" class="item cor04">4</div>
+        <div id="item5" class="item cor05">5</div>
+    </div>
+
+    <div id="caixa2" class="caixa"></div>
+
+    <script>
+    let itens = $('.item')
+        let i = 0
+        console.log(itens)
+
+        $('#btn_mudar').click(()=>{
+            let item = $(itens[i]).detach()
+             i++
+        $('#caixa2').append(item)
+        })
+
+
+
+        $('#btn_reset').click(()=>{
+            for(let i=0; i<itens.length; i++){
+                let item=$(itens[i]).detach()
+                $('#caixa1').append(item)
+            }
+            i=0
+        })
+        
+       /* $('#btn_reset').click(()=>{for(let i=0; i< itens.length; i++){
+            let item = $(itens[i]).detach()
+           $('#caixa1').append(item) 
+        }
+        i=0
+        })*/
+    </script>
+
+    
+</body>
+</html>
