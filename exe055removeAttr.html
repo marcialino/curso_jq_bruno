@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        #caixa{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            border: 3px solid black;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-left: 50px;
+            position: absolute;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Funções RemoveAttr e RemoveClass</h1>
+
+    <p>
+        <button id="btn_posicao">Posição</button>
+        <button id="btn_removerAtr">Remover Atributi</button>
+        <button id="btn_removerClass">Remover Class</button>
+        <button id="btn_adicionar">Adicionar Class</button>
+    </p>
+
+    <div>
+        <label>Topo:</label>
+        <input type="range" id="topo" name="topo" min="0" max="500">
+
+        <label>Left</label>
+        <input type="range" id="left" name="left" min="0" max="500">
+    </div>
+
+    <div id="caixa" class="caixa"></div>
+
+    <script>
+        $('#btn_posicao').click(()=>{
+            let pt = $('#caixa').position().top
+
+            let pl = $('#caixa').position().left
+
+            alert(`Posição top: ${(pt).toFixed(2)} / Posição Left: ${(pl).toFixed(2)}`)
+        })
+
+        $('#topo').change((e)=>{
+            let valor = document.getElementById(e.target.id).value
+            $('#caixa').offset({'top':valor})
+
+        })
+
+        $('#left').change((e)=>{
+            let valor = document.getElementById(e.target.id).value
+            $('#caixa').offset({'left': valor})
+        })
+    </script>
+</body>
+</html>
