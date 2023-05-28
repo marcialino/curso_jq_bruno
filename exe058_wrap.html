@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        .menu{
+            display: flex;
+            flex-direction: column;
+        }
+        .pacote{
+            background-color: #ff0;
+            border: 2px solid #f00;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Funções Wrap e Unwrap</h1>
+
+    <div class="menu">
+        <button id="btn_pacote">Empacotar/Desempacotar</button>
+        <button id="btn_empacotartudo">Empacotar Tudo</button>
+        <button id="btn_empacotardepois">Empacotar Depois</button>
+    </div>
+
+    
+        <p>CFB Cursos</p>
+        <p>CFB Cursos</p>
+        <p>CFB Cursos</p>
+        <p>CFB Cursos</p>
+        <p>CFB Cursos</p>
+    
+
+    <script>
+        let elementos_p=$('p')
+        $('#btn_pacote').click(()=>{
+            if(elementos_p.parent().is('div')){
+                elementos_p.unwrap()
+            }else{
+                elementos_p.wrap("<div class='pacote'></div>")
+            }
+        })
+        $('#btn_empacotartudo').click(()=>{
+            elementos_p.wrapAll("<div class='pacote'></div>")
+        })
+        $('#btn_empacotardepois').click(()=>{
+            elementos_p.wrapInner("<div class='pacote'></div>")
+        })
+        
+    </script>
+
+</body>
+</html>
