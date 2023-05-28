@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        .menu{
+            display: flex;
+            flex-direction: column;
+    
+          
+
+        }
+
+        #texto{
+            border: 1px solid black;
+            width: 150px;
+            height: 150px;
+            overflow:auto;
+        
+          
+            
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Funções ScrollTop e ScrollLeft</h1>
+
+<div class="menu">
+<button id="btn_rolarleft">Rolar Left</button>
+<button id="btn_rolartop">Rolar Top</button>
+<button id="btn_posicaoleft">Posição Left</button>
+<button id="btn_posicaotop">Posição Top</button>
+<button id="btn_resetar">Resetar Posição</button>
+</div>
+    
+<div id="texto">
+    CFB Cursos, curso de Jquery, não deixe de conferir nosso site e baixe todas as apostilas gratuitas, confira também os nossos tutoriais.
+    CFB Cursos, curso de Jquery, não deixe de conferir nosso site e baixe todas as apostilas gratuitas, confira também os nossos tutoriais.
+    CFB Cursos, curso de Jquery, não deixe de conferir nosso site e baixe todas as apostilas gratuitas, confira também os nossos tutoriais.
+</div>
+ <script>
+    $('#btn_rolarleft').click(()=>{
+        $('#texto').scrollLeft(150)
+    })
+    $('#btn_rolartop').click(()=>{
+        $('#texto').scrollTop(150)
+    })
+    $('#btn_posicaotop').click(()=>{
+        alert($('#texto').scrollLeft())
+    })
+    $('#btn_posicaotop').click(()=>{
+        alert($('#texto').scrollTop())
+    })
+    $('#btn_resetar').click(()=>{
+        $('#texto').scrollLeft(0).scrollTop(0)
+    })
+
+</script>
+</body>
+</html>
