@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+    
+    <style>
+        .btn{
+            width: 100%;
+            height: 30px;
+            border: 2px solid black;
+            font: bold 12pt verdana;
+            margin: 0px;
+        
+            padding: 0px;
+        }
+        .cor{
+            color: red;
+        }
+        p{
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Funções ReplaceWith e ReplaceAll</h1>
+
+    <p><button id="btn_replace1" class="btn">ReplaceAll 1</button></p>
+   <p><button id="btn_replace2" class="btn">ReplaceAll 2</button></p>
+   <p><button id="btn_replace3" class="btn">ReplaceWith 1 </button></p>
+   <p><button id="btn_replace4" class="btn">ReplaceWith 2 </button></p>
+
+   <h1 class="cor">CFB Cursos</h1>
+   <h2 class="cor">Curso de jQuery</h2>
+   <h3 class="cor">replace All</h3>
+   <h4 class="cor">replace with</h4>
+
+   <script>
+    /*ReplaceAll: pega todos os elementos que foram definidos na esquerda e substitui pelos elementos que foram selecionados na direita.
+    
+   ReplaceWith: pega todos os elementos que foram definidos na direita e substitui pelos elementos que foram selecionados na esquerda. */
+
+    $('#btn_replace1').click(()=>{
+        $('<p>trocado</p>').replaceAll('.cor')
+    })
+
+    $('#btn_replace2').click((e)=>{
+        $('<div>' + $(e.currentTarget).text()+ '</div>').replaceAll(e.currentTarget)
+    })
+
+    $('#btn_replace3').click(()=>{
+        $('.cor').replaceWith('<p>trocado da direita para esquerda</p>')
+    })
+
+    $('#btn_replace4').click((e)=>{
+        $(e.currentTarget).replaceWith('<div>'+$(e.currentTarget).text()+ '</div')
+
+    })
+   </script>
+
+   </body>
+</html>
