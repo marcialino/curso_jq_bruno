@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        .caixa{
+            background-color: darkgray;
+            width: 200px;
+            height: 250px;
+            padding: 10px;
+            border: 5px solid black;
+            margin: 5px;
+            
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Largura e Altura dos Elementos</h1>
+
+    <div style="display: flex;">
+        <div id="caixa1" class="caixa
+        " style="font:bold 14pt verdana; text-align: center;">CFB Cursos</div>
+        
+        <div id="info" class="caixa"></div>
+    </div>
+
+    <script>
+        /* outerWidth = é a soma da largura do elemento, mais padding (dos dois lados. Se o padding for de 10px, serão somados 20px no total), mais border, mais margin.
+        innerWidth = é a soma da largura do elemento mais padding (dos dois lados) mais o border, mais o margin.
+        O mesmo acontece com o outHeight*/
+
+        let cx =$('#caixa1')
+        $('#info').html(
+            'width:' +cx.width() + ' <br/> Height: '+ cx.height() +
+             + '<br/>innerWidth:' + cx.innerWidth() + '<br/> innerHeight: ' +cx.innerHeight()
+        )
+    </script>
+</body>
+</html>
