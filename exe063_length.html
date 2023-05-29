@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+   
+    <style>
+        .caixa{
+            background-color: yellow;
+            border: 3px solid red;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Função Length</h1>
+
+    <div id="caixa" class="caixa">
+        <p id="p1">CFB Cursos</p>
+        <p id="p2">Curso jQuery</p>
+        <p id="p3">Função length()</p>
+        <p id="p4">cfbcursos.com.br</p>
+        <p id="p5">youtube.com/cfbcursos</p>
+    </div>
+
+    <p id="p1">CFB Cursos</p>
+    <p id="p2">Curso jQuery</p>
+    <p id="p3">Função length()</p>
+    <p id="p4">cfbcursos.com.br</p>
+    <p id="p5">youtube.com/cfbcursos</p>
+
+    <button id="btn_p">Quantidade de P</button>
+    <button id="btn_h4">Quantidade de H1</button>
+
+
+    <script>
+        /*O length retorna a quantidade de elementos que tem a lista selecionada*/
+        $('#btn_p').click((e)=>{
+            alert($('p').length)
+
+        })
+        $('#btn_h4').click(function(){
+            alert($('h1').length)
+        })
+    </script>
+
+
+</body>
+</html>
