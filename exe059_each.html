@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        .cor{
+            background-color: #ff0;
+            border: 2px solid #f00;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Função Each</h1>
+
+    <button id="btn_each">Função Each()</button>
+    <button id="btn_cor">Classe Cor</button>
+
+    <p>CFB Cursos</p>
+    <p>Curso jQuery</p>
+    <p>Função Each()</p>
+    <p>cfbcursos.com.br</p>
+    <p>youTube.com/cfbcursos</p>
+
+    <script>
+        /* no exemplo abaixo, quando clicar no botão each, vai aparecer o texto que consta em cada elemento 'p'.
+        No segundo exemplo, cada p recebe as cores da classe cor.*/
+
+        $('#btn_each').click(()=>{
+            $('p').each(function(){
+                alert($(this).text())
+            })
+            
+        })
+
+        $('#btn_cor').click(()=>{
+            $('p').each(function(){
+                $(this).addClass('cor')
+            })
+        })
+    </script>
+</body>
+</html>
