@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+   
+   <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        .caixa{
+            background-color: yellow;
+            border: 3px solid red;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <h1>Função Index</h1>
+
+    <div id="caixa" class="caixa">
+        <p id="p1">CFB Cursos</p>
+        <p id="p2">Curso jQuery</p>
+        <p id="p3">Função Index()</p>
+        <p id="p4">cfbcursos.com.br</p>
+        <p id="p5">youtube.com/cfbcursos</p>
+    </div>
+
+    <p id="p1">CFB Cursos</p>
+    <p id="p2">Curso jQuery</p>
+    <p id="p3">Função Index()</p>
+    <p id="p4">cfbcursos.com.br</p>
+    <p id="p5">youtube.com/cfbcursos</p>
+
+    <script>
+        /*A função index, dá o número do elemento em relação ao seu parent. Por exemplo o primeiro p da div tem index=0. O primeiro p fora da div tem o index = 2, pois o seu parent é o Body, e vem antes um H1 e uma div, que seria o index=0 e 1*/
+        $('p').click((e)=>{
+            alert($(e.currentTarget).index())
+        })
+    </script>
+
+</body>
+</html>
