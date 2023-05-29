@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        .caixa{
+            background-color: #ff0;
+            padding: 10px;
+            border: 3px solid #f00;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Função Get</h1>
+
+    <button id="btn_obter">Obter Elementos</button>
+
+    <div id="elementos" class="caixa"></div>
+
+    <p>CFB Cursos</p>
+    <p>Curso jQuery</p>
+    <p>Função Each()</p>
+    <p>cfbcursos.com.br</p>
+    <p>youTube.com/cfbcursos</p>
+
+    <script>
+
+        /*A função get obtem todos os elementos do p e adiciona na divi elementos.*/
+        $('#btn_obter').click(()=>{
+            $('#elementos').append($('p').get())
+        })
+    </script>
+
+</body>
+</html>
